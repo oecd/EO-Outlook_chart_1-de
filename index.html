@@ -70,7 +70,7 @@
    <!--<h1>Work in progress</h1>
     <h2>Drag the cursor to see the impact of the Covid crisis depending on the scenario</h2>-->
     <div id="modedemploi">
-        <div id="#intromodedemploi">Select countries and indicator:
+        <div id="#intromodedemploi">Länder und Indikator wählen:
         </div>
         <div id="selCountry">
             <select id="country_dropdown" data-maximum-selection-length="2"  multiple="multiple">
@@ -97,23 +97,23 @@
         </div>
     </div>
    
-        <div id="source" class="source">Source: <a class="source" href="https://data.oecd.org/gdp/real-gdp-forecast.htm" target="_blank">OECD (2020), Real GDP forecast</a> and <a class="source" href=https://data.oecd.org/unemp/unemployment-rate-forecast.htm>Unemployment
+        <div id="source" class="source">Quelle: <a class="source" href="https://data.oecd.org/gdp/real-gdp-forecast.htm" target="_blank">OECD (2020), Real GDP forecast</a> and <a class="source" href=https://data.oecd.org/unemp/unemployment-rate-forecast.htm>Unemployment
             rate forecast (indicators)</a>. © OECD <a class="source" href="http://www.oecd.org/termsandconditions" target="_blank">Terms & Conditions</a>
         </div>
-        <div  id="note" class="source">Divergences for 2019-Q4 are due to data revisions and changes in the base years in country national accounts.</div>
+        <div  id="note" class="source">Abweichungen für Q4 2019 sind auf Datenrevisionen und Änderungen in den Basisjahren derVolkswirtschaftlichen Gesamtrechnungen zurückzuführen.</div>
     <div class="flex-container" id="Downloadbanner">
         <a class="toData" id="countryNote1" href="https://www.oecd-ilibrary.org/sites/0d1d1e2e-en/index.html?itemId=/content/publication/0d1d1e2e-en" target="_blank">Country Notes</a>
-        <a class="toData" id="countryNote2" href="" target="_blank">Country Note</a>
-        <a class="toData" id="snapshot" href="http://www.oecd.org/economy/surveys" target="_blank">Economic Snapshots</a>
+        <a class="toData" id="countryNote2" href="" target="_blank">Länderprofil</a>
+        <a class="toData" id="snapshot" href="http://www.oecd.org/economy/surveys" target="_blank">Wirtschaftliche Momentaufnahme</a>
     </div>
     <div id="shareLink">
             <div id="shutterholdertracker">
                 <img id="shuttershare" src="img/cross.svg">
                 <div id="trackersText">
                     <b>Copy link:</b><Br />
-                    <span>https://oecd.github.io/EO-Outlook_chart_1/</span><Br />
+                    <span>https://oecd.github.io/EO-Outlook_chart_1-de/</span><Br />
                     <b>Embed link:</b><Br />
-                    <textarea readonly><iframe src="https://oecd.github.io/EO-Outlook_chart_1/" width="100%" height="500px" style="border:none;"></iframe></textarea>
+                    <textarea readonly><iframe src="https://oecd.github.io/EO-Outlook_chart_1-de/" width="100%" height="500px" style="border:none;"></iframe></textarea>
 
                 </div>
             </div>
@@ -216,7 +216,7 @@
                 if (d.key == "OECD - Total")
                     countryName = "OECD"
                 if (d.key == "Euro area (17 countries)")
-                    countryName = "Euro area"
+                    countryName = "Euroraum"
                 
 
                 option.innerHTML = countryName;
@@ -246,10 +246,10 @@
 
                     var indicName = d.key;
                     if (d.key == "Gross domestic product, volume, growth")
-                        indicName = "GDP growth rate, change over previous period"
+                        indicName = "BIP-Wachstumsrate, Veränderung gegenüber Vorzeitraum"
 
                     if (d.key == "Unemployment rate")
-                        indicName = "Unemployment rate, % of labour force"
+                        indicName = "Arbeitslosigkeit, in % der Erwerbsbevölkerung"
 
                     option.innerHTML = indicName;
                     if (d.key == "Gross domestic product, volume, growth")
@@ -306,7 +306,7 @@
                     if (d.Country == "OECD - Total")
                         countryName = "OECD"
                     if (d.Country == "Euro area (17 countries)")
-                        countryName = "Euro area"
+                        countryName = "Euroraum"
                     
                     name= countryName;
                 }
@@ -329,7 +329,7 @@
             countryNotes.forEach(function (d) {
                 count1++;
                 if (d.ISO == selButCountries[0]) {
-                    document.getElementById("countryNote1").innerHTML = countryName(selCountries[0]) + " Note"  ;
+                    document.getElementById("countryNote1").innerHTML = countryName(selCountries[0]) + " Länderprofil"  ;
                     document.getElementById("countryNote1").href = d.link_EN;
                     exist1 = true;
                     
@@ -349,7 +349,7 @@
             countryNotes.forEach(function (d) {
                 count2++
                 if (d.ISO == selButCountries[1]) {
-                    document.getElementById("countryNote2").innerHTML = countryName(selCountries[1]) + " Note" ;
+                    document.getElementById("countryNote2").innerHTML = countryName(selCountries[1]) + " Länderprofil" ;
                     document.getElementById("countryNote2").href = d.link_EN;
                     exist2 = true;
                     if (parseFloat(d.link_EN.length) > 0)
@@ -378,7 +378,7 @@
             countryNotes.forEach(function (d) {
                 count1++
                 if (d.ISO == selButCountries[0]) {
-                    document.getElementById("countryNote1").innerHTML =  countryName(selCountries[0]) + " Note" ;
+                    document.getElementById("countryNote1").innerHTML =  countryName(selCountries[0]) + " Länderprofil" ;
                     document.getElementById("countryNote1").href = d.link_EN;
                     exist1 = true;
                     
@@ -468,13 +468,13 @@
                                 // return appropriate quarter for that month
                                 if (mon <= 2) {
                                     
-                                    return yr + "-Q1";
+                                    return "Q1 "+yr ;
                                 } else if (mon <= 5) {
-                                    return yr + "-Q2";
+                                    return "Q2 " + yr ;
                                 } else if (mon <= 8) {
-                                    return yr + "-Q3";
+                                    return "Q3 " + yr ;
                                 } else {
-                                    return yr + "-Q4"
+                                    return "Q4 " + yr 
                                 }
                             
                             //just showing years
@@ -619,7 +619,7 @@
                             annotation2019 = [
                                 {
                                     note: {
-                                        label: countryName(selCountries[i]) + ": November 2019 projections"
+                                        label: countryName(selCountries[i]) + ": Projektionen von November 2019"
                                     },
                                     x: x(dateParser("2020-Q1")),
                                     y: y(parseFloat(data1.filter(function (d) { return d.TIME ==date0; })[i].ScenarioPastVal)),
@@ -633,7 +633,7 @@
                             annotationSingle = [
                                 {
                                     note: {
-                                        label: countryName(selCountries[i]) + ": Single-hit scenario"
+                                        label: countryName(selCountries[i]) + ": Single-Hit-Szenario"
 
                                     },
                                     x: x(dateParser(date1)),
@@ -648,7 +648,7 @@
                             annotationDouble = [
                                 {
                                     note: {
-                                        label: countryName(selCountries[i]) + ": Double-hit scenario"
+                                        label: countryName(selCountries[i]) + ": Double-Hit-Szenario"
                                     },
                                     x: x(dateParser(date2)),
                                     y: y(parseFloat(data1.filter(function (d) { return d.TIME == date2 && d.LOCATION == selCountries[i]; })[0].Scenario2Val)),
@@ -796,7 +796,7 @@
                                     .duration(100)
                                     .style("opacity", 1);
 
-                                var htmlText = "<b>" + d.TIME + "</b><br/><b>&nbsp;"+ countryName(d.LOCATION) + "</b><br>&nbsp;Single-hit scenario: " +  Math.round(d.Scenario1Val*10)/10+ "%<br>&nbsp;Double-hit scenario: " +  Math.round(d.Scenario2Val*10)/10+ "%<br/><br/><b>&nbsp;" + d_1.Country + "</b><br>&nbsp;Single-hit scenario: " +  Math.round(d_1.Scenario1Val *10)/10+ "%<br>&nbsp;Double-hit scenario: " +  Math.round(d_1.Scenario2Val*10)/10 + "%";
+                                var htmlText = "<b>" + d.TIME + "</b><br/><b>&nbsp;"+ countryName(d.LOCATION) + "</b><br>&nbsp;Single-hit Szenario: " +  Math.round(d.Scenario1Val*10)/10+ "%<br>&nbsp;Double-hit Szenario: " +  Math.round(d.Scenario2Val*10)/10+ "%<br/><br/><b>&nbsp;" + d_1.Country + "</b><br>&nbsp;Single-hit Szenario: " +  Math.round(d_1.Scenario1Val *10)/10+ "%<br>&nbsp;Double-hit Szenario: " +  Math.round(d_1.Scenario2Val*10)/10 + "%";
                                 
                                 if(event.pageX < width - 75){
                                     divMap.html(htmlText)
