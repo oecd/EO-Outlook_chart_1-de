@@ -239,7 +239,7 @@
             // document.getElementById("indicator_dropdown").innerHTML = "<option value=\"-\" selected=\"selected\"> - </option>";
             var count=0;
             data.forEach(function (d) {
-                if(d.key!= "Unemployment rate"){///////////////// CONDITION TO REMOVE ONCE DATA ARE FIXED////////////////////////////////////////////////////
+            //    if(d.key!= "Unemployment rate"){///////////////// CONDITION TO REMOVE ONCE DATA ARE FIXED////////////////////////////////////////////////////
                     var x = document.getElementById("indicator_dropdown");
                     var option = document.createElement("option");
                     option.value = d.values[0].VARIABLE;
@@ -256,7 +256,7 @@
                         option.selected = "selected";
                     x.appendChild(option);
 
-                }
+             //   }
 
                 count++;
                 if (count == data.length) {
